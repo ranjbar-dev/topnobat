@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 * {
-  font-family: iransansdn;
+  font-family: iransans;
   outline: none;
-  direction: rtl;
 }
 
 #__nuxt {
-  @apply w-screen h-screen flex flex-col justify-start items-start;
+  @apply overflow-x-hidden flex flex-col justify-start items-start bg-slate-100;
 }
 
-.page-container {
-  @apply w-full md:w-1/2 lg:w-2/3 xl:w-1/2;
+/* Firefox scrollbar customization */
+* {
+  scrollbar-width: none;
 }
