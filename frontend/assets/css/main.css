@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: iransansdn;
+  outline: none;
+  direction: rtl;
+}
+
+#__nuxt {
+  @apply w-screen h-screen flex flex-col justify-start items-start;
+}
+
+.page-container {
+  @apply w-full md:w-1/2 lg:w-2/3 xl:w-1/2;
+}
