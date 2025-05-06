@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full flex flex-col items-center justify-center pb-12" style="height: calc(100vh - 112px);">
+    <div class="w-full flex flex-col items-center justify-center pb-12" style="min-height: calc(100vh - 112px);">
         
         <Vue3Lottie
             :animationData="robotAnimation"
@@ -20,9 +20,9 @@
 
         <input :disabled="loading" type="text" @model="inputText" class="w-[460px] h-[40px] rounded-lg border border-slate-200 py-2 px-4 text-center text-gray-800 text-sm" placeholder="برای مثال: خیلی سرم درد میکنه ..." maxLength="255" />
 
-        <button :disabled="loading" @click="sendData" class="w-[164px] h-[32px] flex justify-center items-center rounded-lg bg-indigo-500 hover:bg-indigo-600 border border-slate-200 px-4 text-center text-white transition-all duration-300 text-sm mt-4">
+        <button :disabled="loading" @click="sendData" class="w-[164px] flex justify-center items-center rounded-md bg-indigo-500 hover:bg-indigo-600 border border-slate-200 px-4 py-2 text-center text-white transition-all duration-300 text-sm mt-4">
             
-            <LoadingSpinner v-if="loading" size="14" />
+            <LoadingSpinner v-if="loading" size="16" />
 
             <span v-else>ارسال اطلاعات</span>
 
@@ -36,14 +36,14 @@ import robotAnimation from '~/assets/lottie/robot.json'
 import { useTypingEffect } from '~/composables/useTypingEffect'
 
 const { displayText: firstText } = useTypingEffect('سلام من ربات تاپ نوبت هستم', 50, 0)
-const { displayText: secondText } = useTypingEffect('توی باکس زیر میتونی مشکل ات رو بنویسی تا من برات بهترین دکتر رو برای مراجعه پیدا کنم', 50, 1300)
+const { displayText: secondText } = useTypingEffect('توی باکس زیر میتونی علایم بیماری ات رو بنویسی تا من برات بهترین دکتر رو برای مراجعه پیدا کنم', 50, 1300)
 
 definePageMeta({
     layout: 'default'
 })
 
 useHead({
-    title: `Home`,
+    title: `تاپ نوبت | صفحه اصلی`,
 })
 
 const inputText = ref<string>('')

@@ -6,12 +6,15 @@
   font-family: iransans;
   outline: none;
 }
-
+ 
 #__nuxt {
   @apply overflow-x-hidden flex flex-col justify-start items-start bg-slate-100;
 }
 
-/* Firefox scrollbar customization */
 * {
   scrollbar-width: none;
+}
+
+.text-sm {
+  line-height: 1.5rem;
 }
