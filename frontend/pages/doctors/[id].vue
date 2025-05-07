@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full flex items-start justify-center pb-12 px-64 gap-6">
+    <div class="w-full flex items-start justify-center pb-12 px-2 lg:px-64 gap-6">
         
         <div class="w-3/4 flex flex-col items-center justify-start">
 

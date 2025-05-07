@@ -18,7 +18,7 @@
             {{ secondText }}
         </div>
 
-        <input :disabled="loading" type="text" @model="inputText" class="w-[300px] lg:w-[460px] h-[40px] rounded-lg border border-slate-200 py-2 px-4 text-center text-gray-800 text-sm" placeholder="برای مثال: خیلی سرم درد میکنه ..." maxLength="255" />
+        <input :disabled="loading" type="text" @model="inputText" class="w-[300px] lg:w-[460px] h-[40px] rounded-lg border border-slate-200 py-2 px-4 text-center text-gray-800 text-sm" placeholder="برای مثال: گلوم درد میکنه ..." maxLength="255" />
 
         <button :disabled="loading" @click="sendData" class="w-[144px] flex justify-center items-center rounded-lg bg-indigo-500 hover:bg-indigo-600 border border-slate-200 px-4 py-2 text-center text-white transition-all duration-300 text-sm mt-4">
             

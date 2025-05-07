@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full flex flex-col items-center justify-start px-64 pb-12" style="min-height: calc(100vh - 112px);">
+    <div class="w-full flex flex-col items-center justify-start px-2 lg:px-64 pb-12" style="min-height: calc(100vh - 112px);">
         
         <div class="w-full flex flex-col items-center justify-start mt-4 px-4 py-4 bg-white rounded-lg">
             

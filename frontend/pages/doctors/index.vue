@@ -1,39 +1,23 @@
 <template>
-    <div class="w-full flex flex-col items-center justify-center pb-12 px-64">
+    <div class="w-full flex flex-col items-start justify-center pt-4 pb-12 px-2 lg:px-64 gap-2">
         
-        <div class="w-full flex items-start justify-center mt-4">
-            
-            <div class="w-1/3 flex flex-col pe-4">
-                <div class="w-full h-64 bg-white rounded-lg py-2 px-4">
+        <input type="text" @model="searchText" class="w-full rounded-lg border border-slate-200 py-3 px-4 text-start text-gray-800 text-sm" placeholder="جستجوی پزشک یا تخصص ..." />
 
-                    <div class="text-base text-gray-800">فیلتر پزشکان</div>
-                    
-                </div>
-            </div>
+        <DoctorRecord />
 
-            <div class="w-2/3 flex flex-col gap-2">
+        <DoctorRecord />
 
-                <input type="text" @model="searchText" class="w-full rounded-lg border border-slate-200 py-3 px-4 text-start text-gray-800 text-sm" placeholder="جستجوی پزشک یا تخصص ..." />
+        <DoctorRecord />
 
-                <DoctorRecord />
+        <DoctorRecord />
 
-                <DoctorRecord />
+        <DoctorRecord />
 
-                <DoctorRecord />
+        <DoctorRecord />
 
-                <DoctorRecord />
+        <DoctorRecord />
 
-                <DoctorRecord />
-
-                <DoctorRecord />
-
-                <DoctorRecord />
-
-                <DoctorRecord />
-
-            </div>
-
-        </div>
+        <DoctorRecord />
 
     </div>
 </template> 
