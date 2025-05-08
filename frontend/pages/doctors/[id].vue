@@ -1,20 +1,20 @@
 <template>
-    <div class="w-full flex items-start justify-center pb-12 px-2 lg:px-64 gap-6">
+    <div class="w-full flex flex-col lg:flex-row items-start justify-center pb-12 px-2 lg:px-64 gap-x-6">
         
-        <div class="w-3/4 flex flex-col items-center justify-start">
+        <div class="w-full lg:w-3/4 flex flex-col items-center justify-start">
 
-            <div class="w-full flex items-center justify-start mt-4 px-4 py-4 bg-white rounded-lg">
+            <div class="w-full flex flex-col lg:flex-row items-center justify-start mt-4 px-4 py-4 bg-white rounded-lg">
 
                 <div class="w-24 h-24 rounded-full bg-slate-200"></div>
 
-                <div class="flex flex-col items-start justify-start ps-4 gap-5">
+                <div class="flex flex-col items-center lg:items-start justify-start ps-4 gap-5 mt-4 lg:mt-0 text-center lg:text-start">
                     <div class="text-gray-800 text-sm font-bold">{{ name }}</div>
                     <div class="text-gray-800 text-xs">{{ profession }}</div>
                 </div>
 
-                <div class="flex flex-col items-start justify-start ps-4 gap-5 ms-auto">
+                <div class="w-full lg:w-auto flex flex-col items-start justify-start ps-4 gap-5 ms-auto mt-4 lg:mt-0">
                     
-                    <div class="w-full flex items-center justify-end">
+                    <div class="w-full flex items-center justify-center lg:justify-end">
                         <Icon name="ic:outline-star" size="16" class="text-gray-200" />
 
                         <Icon name="ic:outline-star" size="16" class="text-yellow-400" />
@@ -26,7 +26,7 @@
                         <Icon name="ic:outline-star" size="16" class="text-yellow-400" />
                     </div>
 
-                    <div class="text-gray-800 text-xs">
+                    <div class="w-full text-gray-800 text-xs text-center lg:text-start">
                         ثبت نام: 
                         بهمن 1404
                     </div>
@@ -54,7 +54,7 @@
 
         </div>
 
-        <div class="w-1/4 flex flex-col items-center justify-start">
+        <div class="w-full lg:w-1/4 flex flex-col items-center justify-start">
 
             <div class="w-full flex flex-col items-center justify-start mt-4 px-4 py-4 bg-white rounded-lg">
 

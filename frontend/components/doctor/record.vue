@@ -33,7 +33,7 @@
                 <span>{{ address }}</span>
             </div>
 
-            <button class="w-full lg:w-auto flex justify-center items-center rounded-md bg-indigo-500 hover:bg-indigo-600 py-1.5 px-4 text-center text-white transition-all duration-300 text-xs ms-auto"> رزرو نوبت</button>
+            <NuxtLink to="/doctors/1" class="w-full lg:w-auto flex justify-center items-center rounded-md bg-indigo-500 hover:bg-indigo-600 py-1.5 px-4 text-center text-white transition-all duration-300 text-xs ms-auto"> رزرو نوبت</NuxtLink>
 
         </div>
         

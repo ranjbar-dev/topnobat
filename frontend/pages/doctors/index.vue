@@ -23,7 +23,6 @@
 </template> 
 
 <script setup lang="ts">
-import { useTypingEffect } from '~/composables/useTypingEffect'
 
 definePageMeta({
     layout: 'default'
