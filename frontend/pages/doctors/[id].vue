@@ -1,4 +1,5 @@
 <template>
+
     <div class="w-full flex flex-col lg:flex-row items-start justify-center pb-12 px-2 lg:px-64 gap-x-6">
         
         <div class="w-full lg:w-3/4 flex flex-col items-center justify-start">
@@ -66,7 +67,7 @@
                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه  پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
                 </div>
                 
-                <button class="w-64 flex justify-center items-center rounded-md bg-indigo-500 hover:bg-indigo-600 py-1.5 px-4 text-center text-white transition-all duration-300 text-sm mt-4 "> رزرو نوبت</button>
+                <button class="w-full flex justify-center items-center rounded-md bg-indigo-500 hover:bg-indigo-600 py-1.5 px-4 text-center text-white transition-all duration-300 text-sm mt-4 "> رزرو نوبت</button>
 
             </div>
             
@@ -85,14 +86,19 @@
                         </div>
                     </div>
                     
-                    <div class="w-full flex items-center justify-center gap-2 mt-4 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md py-3 px-4 text-sm transition-all duration-300 cursor-pointer">
-                        <Icon name="ic:outline-phone" size="18" />
+                    <div class="w-full flex items-center justify-center gap-2 mt-4 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md py-2.5 px-4 text-xs transition-all duration-300 cursor-pointer">
+                        <Icon name="ic:outline-phone" size="16" />
                         <div>{{ phone }}</div>
                     </div>
                     
-                    <div class="w-full flex items-center justify-center gap-2 mt-4 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md py-3 px-4 text-sm transition-all duration-300 cursor-pointer">
-                        <Icon name="ic:outline-phone" size="18" />
+                    <div class="w-full flex items-center justify-center gap-2 mt-4 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md py-2.5 px-4 text-xs transition-all duration-300 cursor-pointer">
+                        <Icon name="ic:outline-phone" size="16" />
                         <div>{{ phone }}</div>
+                    </div>
+
+                    <div class="w-full flex items-center justify-center gap-2 mt-4 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md py-2.5 px-4 text-xs transition-all duration-300 cursor-pointer" @click="showWorkProgramModel">
+                        <Icon name="ic:outline-calendar-month" size="16" />
+                        <div>برنامه کاری</div>
                     </div>
 
                 </div>
@@ -100,10 +106,69 @@
 
         </div>
 
+        <transition>
+    
+            <div class="w-screen h-screen fixed top-0 left-0 bg-slate-800/50 flex items-center justify-center z-50" v-show="work_program_model" @click="hideWorkProgramModel">
+    
+                <div class="w-[420px] flex flex-col items-start justify-center bg-white rounded-lg p-4 text-sm" @click.stop>
+                
+                    <div class="text-base font-bold"> برنامه کاری پزشک  </div>
+    
+                    <div class="w-full flex flex-col items-start justify-center gap-2 mt-4">
+    
+                        <table class="w-full text-gray-800">
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-200 px-2 py-1 text-start"> شنبه </td>
+                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-2 py-1 text-start"> یک شنبه </td>
+                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-2 py-1 text-start"> دوشنبه </td>
+                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-2 py-1 text-start"> سه شنبه </td>
+                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-2 py-1 text-start"> چهارشنبه </td>
+                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-2 py-1 text-start"> پنج شنبه </td>
+                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                </tr>   
+                                <tr>
+                                    <td class="border border-gray-200 px-2 py-1 text-start"> جمعه </td>
+                                    <td class="border border-gray-200 px-2 py-1 text-end"d> - </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                    </div> 
+                    
+                </div>
+    
+            </div>
+    
+        </transition>
+    
     </div>
-</template> 
 
+</template> 
 <script setup lang="ts">
+
+definePageMeta({
+    layout: 'default'
+})
+
+useHead({
+    title: `تاپ نوبت | پزشک`,
+})
 
 const route = useRoute()
 
@@ -116,5 +181,11 @@ const profession = ref<string>('متخصص قلب و عروق متخصص قلب 
 const address = ref<string>('تهران، تهران، تهران، تهران، تهران، خیابان آزادی،خیابان آزادی، پلاک 123')
 
 const phone = ref<string>('09123456789')
+
+const work_program_model = ref<boolean>(false)
+
+const hideWorkProgramModel = () => work_program_model.value = false
+
+const showWorkProgramModel = () => work_program_model.value = true
 
 </script>

@@ -1,7 +1,7 @@
 <template>
   <transition>
 
-    <div  class="w-screen h-screen fixed top-0 left-0 bg-slate-800/50 flex items-center justify-center z-50" v-show="modal" @click="cityStore.hideModal()">
+    <div class="w-screen h-screen fixed top-0 left-0 bg-slate-800/50 flex items-center justify-center z-50" v-show="modal" @click="cityStore.hideModal()">
 
       <div class="w-[420px] flex flex-col items-start justify-center bg-white rounded-lg p-4 text-sm" @click.stop>
       

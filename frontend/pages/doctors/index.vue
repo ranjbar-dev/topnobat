@@ -28,9 +28,11 @@ definePageMeta({
     layout: 'default'
 })
 
-const searchText = ref<string>('')
 useHead({
     title: `تاپ نوبت | پزشکان`,
 })
+
+const searchText = ref<string>('')
+
 
 </script>
