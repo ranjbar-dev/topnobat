@@ -3,7 +3,13 @@
 
       <div class="flex justify-start items-center gap-6">
 
-         <img src="/topnotbat.png" alt="logo" class="h-12 me-4">
+         <NuxtLink to="/">
+
+            <img src="/topnotbat.png" alt="logo" class="hidden lg:block h-10 me-4">
+
+            <img src="/logo.png" alt="logo" class="block lg:hidden h-10 me-4">
+            
+         </NuxtLink>
 
          <NuxtLink to="/" class="hidden lg:block text-gray-800 hover:text-indigo-600 text-sm cursor-pointer transition-all duration-300">صفحه اصلی</NuxtLink>
 
