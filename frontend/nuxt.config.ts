@@ -3,18 +3,6 @@ export default defineNuxtConfig({
 
   ssr: false,
 
-  app: {
-    head: {
-      title: 'تاپ نوبت',
-      htmlAttrs: {
-        lang: 'fa',
-      },
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      ]
-    }
-  },
-
   compatibilityDate: '2024-11-01',
   
   devtools: { enabled: true },
@@ -33,9 +21,5 @@ export default defineNuxtConfig({
       strict: false
     }
   },
-
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
-  }
   
 });
