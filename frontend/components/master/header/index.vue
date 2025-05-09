@@ -1,19 +1,19 @@
 <template>
    <header class="w-screen h-[64px] px-2 lg:px-64 flex items-center justify-between border-b border-slate-200">
 
-      <div class="flex justify-start items-center gap-6">
+      <!---------------------- Desktop Menu  ---------------------->
+
+      <div class="hidden lg:flex justify-start items-center gap-6">
 
          <NuxtLink to="/">
 
-            <img src="/topnotbat.png" alt="logo" class="hidden lg:block h-10 me-4">
-
-            <img src="/logo.png" alt="logo" class="block lg:hidden h-10 me-4">
+            <img src="/topnotbat.png" alt="logo" class="h-10 me-4">
             
          </NuxtLink>
 
-         <NuxtLink to="/" class="hidden lg:block text-gray-800 hover:text-indigo-600 text-sm cursor-pointer transition-all duration-300">صفحه اصلی</NuxtLink>
+         <NuxtLink to="/" class=" text-gray-800 hover:text-indigo-600 text-sm cursor-pointer transition-all duration-300">صفحه اصلی</NuxtLink>
 
-         <NuxtLink to="/doctors" class="hidden lg:block text-gray-800 hover:text-indigo-600 text-sm cursor-pointer transition-all duration-300">پزشکان</NuxtLink>
+         <NuxtLink to="/doctors" class=" text-gray-800 hover:text-indigo-600 text-sm cursor-pointer transition-all duration-300">پزشکان</NuxtLink>
 
          <NuxtLink to="/about-us" class="hidden lg:block text-gray-800 hover:text-indigo-600 text-sm cursor-pointer transition-all duration-300">درباره ما</NuxtLink>
          
@@ -43,14 +43,26 @@
 
       </div>
 
-      <div class="flex lg:hidden justify-center items-center gap-4">
+      <!---------------------- Mobile Menu  ---------------------->
 
-         <div class="flex justify-center items-center bg-indigo-500 hover:bg-indigo-600 text-white rounded-full px-4 py-2 cursor-pointer transition-all duration-300 text-xs gap-1" @mouseenter="showCityName" @mouseleave="hideCityName" @click="cityStore.showModal()">
-            <Icon name="ic:outline-location-on" size="18"/>
-            <span>{{ cityName }}</span>
+      <div class="flex lg:hidden w-full justify-between items-center">
+
+         <div class="flex w-1/3 justify-start items-center">
+            <Icon name="ic:outline-menu" size="28" class="text-gray-500 hover:text-indigo-600 cursor-pointer transition-all duration-300" @click="showMenu" />
          </div>
 
-         <Icon name="ic:outline-menu" size="28" class="text-gray-800 hover:text-indigo-600 cursor-pointer transition-all duration-300" @click="showMenu" />
+         <div class="flex w-1/3 justify-center items-center">
+            <div class="flex justify-center items-center bg-indigo-500 hover:bg-indigo-600 text-white rounded-full px-4 py-2 cursor-pointer transition-all duration-300 text-xs gap-1" @mouseenter="showCityName" @mouseleave="hideCityName" @click="cityStore.showModal()">
+               <Icon name="ic:outline-location-on" size="18"/>
+               <span>{{ cityName }}</span>
+            </div>
+         </div>
+
+         <div class="flex w-1/3 justify-end items-center">
+            <div class="flex justify-center items-center border border-slate-500 text-slate-500 rounded-lg py-2 px-2 cursor-pointer transition-all duration-300 text-xs" @click="authStore.showModal()">
+               <Icon name="ic:outline-person" size="18"/>
+            </div>
+         </div>
 
       </div>
 
@@ -89,21 +101,8 @@
 
                </div>
 
-               <div class="w-full">
-
-                  <div class="flex justify-center items-center border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white rounded-lg py-2 px-4 mt-2 cursor-pointer transition-all duration-300 text-xs" @click="authStore.showModal()">
-                  
-                     <template v-if="false"> 
-                        ورود | ثبت نام
-                     </template>
-
-                     <span v-else class="flex justify-center items-center gap-1">
-                        <Icon name="ic:outline-person" size="18"/>
-                        حساب کاربری
-                     </span>
-
-                  </div>
-
+               <div class="w-full flex justify-center items-center gap-2 text-gray-500 text-xs cursor-pointer transition-all duration-300">
+                  آریا نوین بهکامه
                </div>
 
 
