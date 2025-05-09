@@ -34,7 +34,7 @@
 
         <template v-else-if="step === 2">
 
-            <div class="w-4/5 lg:w-[460px] flex flex-col justify-center items-center">
+            <div class="w-4/5 lg:w-[600px] flex flex-col justify-center items-center">
                  
                 <LoadingSpinner v-if="loading" size="20" class="my-1 border-slate-500" />
 
@@ -78,7 +78,7 @@ const step = ref<number>(1)
 const doctor = ref<any>('')
 const result = ref<string>('')
 
-const incomingData = ref<string>('lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.  lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.')
+const incomingData = ref<string>('لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.')
 
 const sendData = () => {
 
@@ -96,11 +96,11 @@ const fillResult = () => {
     for (let i = 0; i < incomingData.value.length; i++) {
         setTimeout(() => {
             result.value += incomingData.value[i]
-        }, i * 20)
+        }, i * 10)
     }
     setTimeout(() => {
         doctor.value = 'دکتر حسین عبدالهی'
-    }, incomingData.value.length * 20)
+    }, incomingData.value.length * 10)
 }
 
 </script>
