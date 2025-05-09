@@ -3,23 +3,21 @@
         
         <template v-if="step === 1">
 
-            <Vue3Lottie
-                :animationData="robotAnimation"
-                :height="200"
-                :width="200"
-                :speed="1"
-                :loop="true"
-                :autoPlay="true"
-            />
+            <ClientOnly>
+                <Vue3Lottie
+                    :animationData="robotAnimation"
+                    :height="200"
+                    :width="200"
+                    :speed="1"
+                    :loop="true"
+                    :autoPlay="true"
+                />
+            </ClientOnly>
+        
+            <div class="w-full text-gray-800 text-base mt-6 mb-2 px-4 text-center"> {{ firstText }} </div>
     
-            <div class="w-full text-gray-800 text-base mt-6 mb-2 px-4 text-center">
-                {{ firstText }}
-            </div>
-    
-            <div class="w-full text-gray-800 text-base mb-4 px-4 text-center">
-                {{ secondText }}
-            </div>
-    
+            <div class="w-full text-gray-800 text-base mb-4 px-4 text-center"> {{ secondText }} </div>
+                
             <input :disabled="loading" type="text" @model="inputText" class="w-[300px] lg:w-[460px] h-[40px] rounded-lg border border-slate-200 py-2 px-4 text-center text-gray-800 text-sm" placeholder="برای مثال: گلوم درد میکنه ..." maxLength="255" />
     
             <button :disabled="loading" @click="sendData" class="w-[144px] flex justify-center items-center rounded-lg bg-indigo-500 hover:bg-indigo-600 border border-slate-200 px-4 py-2 text-center text-white transition-all duration-300 text-sm mt-4">
@@ -38,17 +36,25 @@
                  
                 <LoadingSpinner v-if="loading" size="20" class="my-1 border-slate-500" />
 
-                <template v-else>
+                <Transition name="fade">
 
-                    <div class="w-full bg-white rounded-lg text-sm text-start py-4 px-4 mt-4 mb-2 text-gray-800">{{ result }}</div>
+                    <div class="w-full flex flex-col justify-center items-center" v-if="!loading">
 
-                    <DoctorRecord v-if="doctor" class="mb-2" />
+                        <div class="w-full bg-white rounded-lg text-sm text-start py-4 px-4 mt-4 mb-2 text-gray-800">{{ result }}</div>
 
-                    <button v-if="doctor" class="w-[144px] flex justify-center items-center rounded-lg bg-slate-500 hover:bg-slate-600 border border-slate-200 px-4 py-2 text-center text-white transition-all duration-300 text-sm mt-4" @click="step = 1">
-                        <span>بازگشت</span>
-                    </button>
+                        <Transition name="fade">
+                            <DoctorRecord v-if="doctor" class="mb-2" />
+                        </Transition>
 
-                </template>
+                        <Transition name="fade">
+                            <button v-if="doctor" class="w-[144px] flex justify-center items-center rounded-lg bg-slate-500 hover:bg-slate-600 border border-slate-200 px-4 py-2 text-center text-white transition-all duration-300 text-sm mt-4" @click="resetResult">
+                                <span>بازگشت</span>
+                            </button>
+                        </Transition>
+
+                    </div>
+
+                </Transition>
 
             </div>
 
@@ -103,4 +109,9 @@ const fillResult = () => {
     }, incomingData.value.length * 10)
 }
 
+const resetResult = () => {
+    step.value = 1
+    result.value = ''
+    doctor.value = ''
+}
 </script>

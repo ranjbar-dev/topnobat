@@ -1,5 +1,5 @@
 <template>
-  <transition>
+  <Transition name="fade">
 
     <div  class="w-screen h-screen fixed top-0 left-0 bg-slate-800/50 flex items-center justify-center z-50" v-show="modal" @click="authStore.hideModal()">
 
@@ -51,7 +51,7 @@
 
     </div>
 
-  </transition>
+  </Transition>
 </template>
 <script lang="ts" setup>
 

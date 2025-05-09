@@ -1,7 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 
-  ssr: true,
+  ssr: false,
+
+  app: {
+    head: {
+      title: 'تاپ نوبت',
+    },
+    pageTransition: {
+      name: 'fade',
+      mode: 'out-in'
+    },
+    layoutTransition: {
+      name: 'fade',
+      mode: 'out-in'
+    },
+  },
 
   compatibilityDate: '2024-11-01',
   

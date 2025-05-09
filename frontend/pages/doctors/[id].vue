@@ -106,7 +106,7 @@
 
         </div>
 
-        <transition>
+        <Transition name="fade">
     
             <div class="w-screen h-screen fixed top-0 left-0 bg-slate-800/50 flex items-center justify-center z-50" v-show="work_program_model" @click="hideWorkProgramModel">
     
@@ -155,7 +155,7 @@
     
             </div>
     
-        </transition>
+        </Transition>
     
     </div>
 
