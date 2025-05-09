@@ -1,33 +1,59 @@
 <template>
     <div class="w-full flex flex-col items-center justify-center pb-12" style="min-height: calc(100vh - 112px);">
         
-        <Vue3Lottie
-            :animationData="robotAnimation"
-            :height="200"
-            :width="200"
-            :speed="1"
-            :loop="true"
-            :autoPlay="true"
-        />
+        <template v-if="step === 1">
 
-        <div class="w-full text-gray-800 text-base mt-6 mb-2 text-center">
-            {{ firstText }}
-        </div>
+            <Vue3Lottie
+                :animationData="robotAnimation"
+                :height="200"
+                :width="200"
+                :speed="1"
+                :loop="true"
+                :autoPlay="true"
+            />
+    
+            <div class="w-full text-gray-800 text-base mt-6 mb-2 px-4 text-center">
+                {{ firstText }}
+            </div>
+    
+            <div class="w-full text-gray-800 text-base mb-4 px-4 text-center">
+                {{ secondText }}
+            </div>
+    
+            <input :disabled="loading" type="text" @model="inputText" class="w-[300px] lg:w-[460px] h-[40px] rounded-lg border border-slate-200 py-2 px-4 text-center text-gray-800 text-sm" placeholder="برای مثال: گلوم درد میکنه ..." maxLength="255" />
+    
+            <button :disabled="loading" @click="sendData" class="w-[144px] flex justify-center items-center rounded-lg bg-indigo-500 hover:bg-indigo-600 border border-slate-200 px-4 py-2 text-center text-white transition-all duration-300 text-sm mt-4">
+                
+                <LoadingSpinner v-if="loading" size="16" class="my-1" />
+    
+                <span v-else>ارسال</span>
+    
+            </button>
 
-        <div class="w-full text-gray-800 text-base mb-4 text-center">
-            {{ secondText }}
-        </div>
+        </template>
 
-        <input :disabled="loading" type="text" @model="inputText" class="w-[300px] lg:w-[460px] h-[40px] rounded-lg border border-slate-200 py-2 px-4 text-center text-gray-800 text-sm" placeholder="برای مثال: گلوم درد میکنه ..." maxLength="255" />
+        <template v-else-if="step === 2">
 
-        <button :disabled="loading" @click="sendData" class="w-[144px] flex justify-center items-center rounded-lg bg-indigo-500 hover:bg-indigo-600 border border-slate-200 px-4 py-2 text-center text-white transition-all duration-300 text-sm mt-4">
-            
-            <LoadingSpinner v-if="loading" size="16" class="my-1" />
+            <div class="w-4/5 lg:w-[460px] flex flex-col justify-center items-center">
+                 
+                <LoadingSpinner v-if="loading" size="20" class="my-1 border-slate-500" />
 
-            <span v-else>ارسال</span>
+                <template v-else>
 
-        </button>
+                    <div class="w-full bg-white rounded-lg text-sm text-start py-4 px-4 mt-4 mb-2 text-gray-800">{{ result }}</div>
 
+                    <DoctorRecord v-if="doctor" class="mb-2" />
+
+                    <button v-if="doctor" class="w-[144px] flex justify-center items-center rounded-lg bg-slate-500 hover:bg-slate-600 border border-slate-200 px-4 py-2 text-center text-white transition-all duration-300 text-sm mt-4" @click="step = 1">
+                        <span>بازگشت</span>
+                    </button>
+
+                </template>
+
+            </div>
+
+        </template>
+        
     </div>
 </template> 
 
@@ -35,8 +61,8 @@
 import robotAnimation from '~/assets/lottie/robot.json'
 import { useTypingEffect } from '~/composables/useTypingEffect'
 
-const { displayText: firstText } = useTypingEffect('سلام من ربات تاپ نوبت هستم', 50, 0)
-const { displayText: secondText } = useTypingEffect('توی باکس زیر میتونی علایم بیماری ات رو بنویسی تا من برات بهترین دکتر رو برای مراجعه پیدا کنم', 50, 1300)
+const { displayText: firstText } = useTypingEffect('سلام من ربات تاپ نوبت هستم', 25, 0)
+const { displayText: secondText } = useTypingEffect('توی باکس زیر میتونی علایم بیماری ات رو بنویسی تا من برات بهترین دکتر رو برای مراجعه پیدا کنم', 25, 650)
 
 definePageMeta({
     layout: 'default'
@@ -48,13 +74,33 @@ useHead({
 
 const inputText = ref<string>('')
 const loading = ref<boolean>(false)
+const step = ref<number>(1)
+const doctor = ref<any>('')
+const result = ref<string>('')
+
+const incomingData = ref<string>('lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.  lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.')
 
 const sendData = () => {
 
     loading.value = true
+    step.value = 2
     setTimeout(() => {
-        loading.value = false
+        fillResult()
     }, 1000)
+}
+
+const fillResult = () => {
+
+    loading.value = false
+
+    for (let i = 0; i < incomingData.value.length; i++) {
+        setTimeout(() => {
+            result.value += incomingData.value[i]
+        }, i * 20)
+    }
+    setTimeout(() => {
+        doctor.value = 'دکتر حسین عبدالهی'
+    }, incomingData.value.length * 20)
 }
 
 </script>
