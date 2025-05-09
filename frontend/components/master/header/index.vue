@@ -45,6 +45,11 @@
 
       <div class="flex lg:hidden justify-center items-center gap-4">
 
+         <div class="flex justify-center items-center bg-indigo-500 hover:bg-indigo-600 text-white rounded-full px-4 py-2 cursor-pointer transition-all duration-300 text-xs gap-1" @mouseenter="showCityName" @mouseleave="hideCityName" @click="cityStore.showModal()">
+            <Icon name="ic:outline-location-on" size="18"/>
+            <span>{{ cityName }}</span>
+         </div>
+
          <Icon name="ic:outline-menu" size="28" class="text-gray-800 hover:text-indigo-600 cursor-pointer transition-all duration-300" @click="showMenu" />
 
       </div>
@@ -52,11 +57,15 @@
       <Transition name="fade">
          <div class="fixed top-0 left-0 w-screen h-screen bg-slate-800/50 z-10" v-if="menu_visible" @click="hideMenu">
 
-            <div class="w-80 h-full flex flex-col items-start justify-between py-4 px-4 gap-4 bg-white">
+            <div class="w-[280px] h-full flex flex-col items-start justify-between py-4 px-4 gap-4 bg-white">
 
                <div class="w-full flex flex-col items-start justify-start gap-4"> 
 
-                  <img src="/topnotbat.png" alt="logo" class="h-12 me-4">
+                  <div class="w-full flex justify-center items-center">
+                     <img src="/topnotbat.png" alt="logo" class="h-12 me-4">
+                  </div>
+
+                  <div class="w-full border-b border-slate-200 mb-2"></div>
 
                   <NuxtLink to="/" class="flex justify-center items-center gap-2 text-gray-800 hover:text-indigo-600 text-sm cursor-pointer transition-all duration-300">
                      <Icon name="ic:outline-home" size="18" />
@@ -81,11 +90,6 @@
                </div>
 
                <div class="w-full">
-
-                  <div class="flex justify-center items-center bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg px-4 py-2 cursor-pointer transition-all duration-300 text-xs gap-1"  @mouseenter="showCityName" @mouseleave="hideCityName" @click="cityStore.showModal()">
-                     <Icon name="ic:outline-location-on" size="18"/>
-                     <span>{{ cityName }}</span>
-                  </div>
 
                   <div class="flex justify-center items-center border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white rounded-lg py-2 px-4 mt-2 cursor-pointer transition-all duration-300 text-xs" @click="authStore.showModal()">
                   
