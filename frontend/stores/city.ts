@@ -1,6 +1,12 @@
 import type { City } from '~/models/city' 
 
-const getCityFromLocalStorage = (): number => parseInt(localStorage.getItem('city') || '1')
+const getCityFromLocalStorage = (): number => {
+
+    if (process.client) 
+        return parseInt(localStorage.getItem('city') || '1')
+
+    return 1
+}
 
 export const useCityStore = defineStore('city', () => {
 
@@ -25,7 +31,9 @@ export const useCityStore = defineStore('city', () => {
     const setCityId = (value: number): void => {
 
         cityId.value = value
-        localStorage.setItem('city', value.toString())  
+
+        if (process.client)
+            localStorage.setItem('city', value.toString())  
     }
 
     const showModal = () => modal.value = true
