@@ -45,9 +45,22 @@
                     <div class="w-full bg-white rounded-lg text-sm text-start py-4 px-4 mt-4 mb-2 text-gray-800">{{ result }}</div>
 
                     <TransitionGroup name="fade">
-                        <DoctorRecord v-if="doctor" class="mb-2" />
-                        <DoctorRecord v-if="doctor" class="mb-2" />
-                        <DoctorRecord v-if="doctor" class="mb-2" />
+
+                        <div class="w-full flex flex-col justify-center items-start mt-2" v-if="doctor" >
+                            <div class="text-sm text-gray-800 mb-2">سابقه دار ترین</div>
+                            <DoctorSuggestion />
+                        </div>
+
+                        <div class="w-full flex flex-col justify-center items-start mt-2" v-if="doctor" >
+                            <div class="text-sm text-gray-800 mb-2">محبوب ترین</div>
+                            <DoctorSuggestion />
+                        </div>
+
+                        <div class="w-full flex flex-col justify-center items-start mt-2" v-if="doctor" >
+                            <div class="text-sm text-gray-800 mb-2">نزدیک ترین</div>
+                            <DoctorSuggestion />
+                        </div>
+
                     </TransitionGroup>
 
                     <Transition name="fade">
