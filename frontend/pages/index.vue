@@ -90,7 +90,7 @@ definePageMeta({
 })
 
 useHead({
-    title: `تاپ نوبت | صفحه اصلی`,
+    title: `61190236`, // تاپ نوبت 
 })
 
 const inputText = ref<string>('')

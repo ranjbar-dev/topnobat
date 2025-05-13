@@ -5,7 +5,10 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'تاپ نوبت',
+      title: '61190236', // تاپ نوبت
+      meta: [
+        { name: 'enamad', content: '61190236' } // TODO : remove 
+      ]
     },
     pageTransition: {
       name: 'fade',
