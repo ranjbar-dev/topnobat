@@ -46,18 +46,18 @@
 
                     <TransitionGroup name="fade">
 
-                        <div class="w-full flex flex-col justify-center items-start mt-2" v-if="doctor" >
-                            <div class="text-sm text-gray-800 mb-2">سابقه دار ترین</div>
+                        <div class="w-full flex flex-col justify-center items-start mt-3" v-if="doctor" >
+                            <div class="text-sm text-gray-800 font-bold mb-2">سابقه دار ترین</div>
                             <DoctorSuggestion />
                         </div>
 
-                        <div class="w-full flex flex-col justify-center items-start mt-2" v-if="doctor" >
-                            <div class="text-sm text-gray-800 mb-2">محبوب ترین</div>
+                        <div class="w-full flex flex-col justify-center items-start mt-3" v-if="doctor" >
+                            <div class="text-sm text-gray-800 font-bold mb-2">محبوب ترین</div>
                             <DoctorSuggestion />
                         </div>
 
-                        <div class="w-full flex flex-col justify-center items-start mt-2" v-if="doctor" >
-                            <div class="text-sm text-gray-800 mb-2">نزدیک ترین</div>
+                        <div class="w-full flex flex-col justify-center items-start mt-3" v-if="doctor" >
+                            <div class="text-sm text-gray-800 font-bold mb-2">نزدیک ترین</div>
                             <DoctorSuggestion />
                         </div>
 

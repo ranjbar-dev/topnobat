@@ -86,15 +86,15 @@
                         </div>
                     </div>
                     
-                    <div class="w-full flex items-center justify-center gap-2 mt-4 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md py-2.5 px-4 text-xs transition-all duration-300 cursor-pointer">
+                    <a href="tel:{{ phone }}" class="w-full flex items-center justify-center gap-2 mt-4 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md py-2.5 px-4 text-xs transition-all duration-300 cursor-pointer">
                         <Icon name="ic:outline-phone" size="16" />
                         <div>{{ phone }}</div>
-                    </div>
+                    </a>
                     
-                    <div class="w-full flex items-center justify-center gap-2 mt-4 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md py-2.5 px-4 text-xs transition-all duration-300 cursor-pointer">
+                    <a href="tel:{{ phone }}" class="w-full flex items-center justify-center gap-2 mt-4 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md py-2.5 px-4 text-xs transition-all duration-300 cursor-pointer">
                         <Icon name="ic:outline-phone" size="16" />
                         <div>{{ phone }}</div>
-                    </div>
+                    </a>
 
                     <div class="w-full flex items-center justify-center gap-2 mt-4 border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md py-2.5 px-4 text-xs transition-all duration-300 cursor-pointer" @click="showWorkProgramModel">
                         <Icon name="ic:outline-calendar-month" size="16" />
@@ -119,32 +119,32 @@
                         <table class="w-full text-gray-800">
                             <tbody>
                                 <tr>
-                                    <td class="border border-gray-200 px-2 py-1 text-start"> شنبه </td>
-                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-start"> شنبه </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-end"> 10:00 - 12:00 </td>
                                 </tr>
                                 <tr>
-                                    <td class="border border-gray-200 px-2 py-1 text-start"> یک شنبه </td>
-                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-start"> یک شنبه </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-end"> 10:00 - 12:00 </td>
                                 </tr>
                                 <tr>
-                                    <td class="border border-gray-200 px-2 py-1 text-start"> دوشنبه </td>
-                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-start"> دوشنبه </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-end"> 10:00 - 12:00 </td>
                                 </tr>
                                 <tr>
-                                    <td class="border border-gray-200 px-2 py-1 text-start"> سه شنبه </td>
-                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-start"> سه شنبه </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-end"> 10:00 - 12:00 </td>
                                 </tr>
                                 <tr>
-                                    <td class="border border-gray-200 px-2 py-1 text-start"> چهارشنبه </td>
-                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-start"> چهارشنبه </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-end"> 10:00 - 12:00 </td>
                                 </tr>
                                 <tr>
-                                    <td class="border border-gray-200 px-2 py-1 text-start"> پنج شنبه </td>
-                                    <td class="border border-gray-200 px-2 py-1 text-end"> 10:00 - 12:00 </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-start"> پنج شنبه </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-end"> 10:00 - 12:00 </td>
                                 </tr>   
                                 <tr>
-                                    <td class="border border-gray-200 px-2 py-1 text-start"> جمعه </td>
-                                    <td class="border border-gray-200 px-2 py-1 text-end"d> - </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-start"> جمعه </td>
+                                    <td class="border border-gray-200 px-3 py-2 text-end"d> - </td>
                                 </tr>
                             </tbody>
                         </table>
